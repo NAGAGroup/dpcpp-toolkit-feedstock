@@ -1,247 +1,247 @@
-## About
+About open-dpcpp-toolkit-feedstock
+==================================
 
-This repo is a holding area for recipes destined for a conda-forge feedstock repo. To find out more about conda-forge, see https://github.com/conda-forge/conda-smithy.
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dpcpp-toolkit-feedstock/blob/main/LICENSE.txt)
 
-[![Join the chat at https://conda-forge.zulipchat.com](https://img.shields.io/badge/Zulip-join_chat-53bfad.svg)](https://conda-forge.zulipchat.com)
+Home: https://github.com/NAGAGroup/CodeAccelerate-SYCLBuildKit
 
-## Feedstock conversion status
+Package license: Apache-2.0
 
-[![create_feedstocks](https://github.com/conda-forge/admin-requests/actions/workflows/create_feedstocks.yml/badge.svg)](https://github.com/conda-forge/admin-requests/actions/workflows/create_feedstocks.yml)
+Summary: DPC++ toolkit with nvidia support
 
-Failures with the above job are often caused by API rate limits from the various services used by conda-forge.
-This can result in empty feedstock repositories and will resolve itself automatically.
-If the issue persists, support can be found [on Zulip](https://conda-forge.zulipchat.com).
+DPC++ is the Intel's open-source clang toolkit for sycl. DPC++ 
+supports Nvidia GPUs, making the switch from CUDA possible without 
+new hardware.
 
-## Getting started
+Current build status
+====================
 
-1. Fork this repository.
-2. Make a new folder in `recipes` for your package. Look at the [example recipe](recipes/example), our [documentation](http://conda-forge.org/docs/maintainer/adding_pkgs.html#) and the [FAQ](https://github.com/conda-forge/staged-recipes#faq) for help.
-3. Open a pull request. Building of your package will be tested on Windows, Mac and Linux.
-4. When your pull request is merged a new repository, called a feedstock, will be created in the github conda-forge organization, and build/upload of your package will automatically be triggered. Once complete, the package is available on conda-forge.
 
-### `pixi`
+<table>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dpcpp-toolkit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
+</table>
 
-`pixi` is a project based environment and task runner optimized for `conda`. Several of
-the local workflows and their dependencies described below are captured in
-`pixi.toml`. Install `pixi` via the [documented approaches](https://pixi.sh/latest/#installation),
-or via `conda`/`mamba`/`micromamba`:
+Current release info
+====================
 
-```bash
-$CONDA_EXE install -c conda-forge pixi
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-open--dpcpp--toolkit-green.svg)](https://anaconda.org/conda-forge/open-dpcpp-toolkit) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/open-dpcpp-toolkit.svg)](https://anaconda.org/conda-forge/open-dpcpp-toolkit) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/open-dpcpp-toolkit.svg)](https://anaconda.org/conda-forge/open-dpcpp-toolkit) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/open-dpcpp-toolkit.svg)](https://anaconda.org/conda-forge/open-dpcpp-toolkit) |
+
+Installing open-dpcpp-toolkit
+=============================
+
+Installing `open-dpcpp-toolkit` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+
+```
+conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-See the available tasks with `pixi task list`.
+Once the `conda-forge` channel has been enabled, `open-dpcpp-toolkit` can be installed with `conda`:
 
-## Local debugging with `build-locally.py`
-
-The script `build-locally.py` will guide you through the local debugging process. This script
-will then launch the platform-specific scripts, which support some key environment variables in
-macOS and Windows:
-
-- `MINIFORGE_HOME`: Where the build tools will be installed. Defaults to `~/Miniforge3`.
-- `CONDA_BLD_PATH`: Where the build artifacts will be kept. Defaults to `~/Miniforge3/conda-bld`
-  on macOS and `C:\bld` on Windows.
-
-On Linux, everything runs in a Docker container. The `staged-recipes` directory is mounted as a volume. The resulting artifacts will be available under `build_artifacts` in the repository directory.
-
-`build-locally.py` can be run with any recent Python, or via a [`pixi`](#pixi) task:
-
-* `pixi run build-linux`: will launch a Docker container, provision all the necessary tools and build your recipe for Linux.
-* `pixi run build-osx`: will provision a conda environment with the necessary tools to build your recipe for macOS. This involves fetching and caching the necessary Apple SDKs.
-* `pixi run build-win`: will provision a conda environment with the necessary tools to build your recipe for Windows.
-
-These tasks will pass any extra arguments to `build-locally.py`, including `--help`. The resulting
-artifacts will be available under `build_artifacts`.
-
-## Generating recipes with `grayskull`
-
-[grayskull](https://github.com/conda-incubator/grayskull) can generate recipes from
-Python packages on [PyPI](https://pypi.org) or R packages on [CRAN](https://cran.r-project.org/).
-The user should review the recipe generated, especially the license and dependencies.
-
-Use one of:
-
-- manually
-  1. install `grayskull`: `conda install -c conda-forge grayskull`
-  2. generate recipe:
-    - `cd recipes && grayskull pypi PACKAGE_NAME_ON_PYPI_HERE [PACKAGE_NAME_ON_PYPI_HERE...]`
-    - `cd recipes && grayskull cran PACKAGE_NAME_ON_CRAN_HERE [PACKAGE_NAME_ON_CRAN_HERE...]`
-- with [`pixi`](#pixi):
-  1. generate recipe:
-    - `pixi run pypi PACKAGE_NAME_ON_PYPI_HERE [PACKAGE_NAME_ON_PYPI_HERE...]`
-    - `pixi run cran PACKAGE_NAME_ON_CRAN_HERE [PACKAGE_NAME_ON_CRAN_HERE...]`
-
-## Linting recipes with `conda-smithy`
-
-The [`conda-smithy`](https://github.com/conda-forge/conda-smithy) package provides
-helpful linters that can save CI resources by catching known issues up-front.
-
-Use one of:
-- manually
-  - install `conda-smithy`: `conda install -c conda-forge conda-smithy`
-  - lint recipes: `conda-smithy recipe-lint --conda-forge recipes/*`
-- with [`pixi`](#pixi):
-  - lint recipes: `pixi run lint`
-
-> **NOTE**
->
-> `conda-smithy` is
-> [frequently updated](https://github.com/conda-forge/conda-smithy/blob/main/CHANGELOG.rst)
-> with current best practices. Ensure using the latest with:
->
-> - `$CONDA_EXE upgrade conda-smithy`
-> - `pixi upgrade --feature conda-smithy`
-
-## FAQ
-
-### 1. **How do I start editing the recipe?**
-
-Look at one of [these examples](https://github.com/conda-forge/staged-recipes/tree/main/recipes)
-in this repository and modify it as necessary.
-
-Follow the order of the sections in the example recipe. If you make a copy of example recipe, please remove the example's explainer comments from your recipe. Add your own comments to the recipe and build scripts to explain unusual build behavior or recipe options.
-
-*If there are details you are not sure about please open a pull request. The conda-forge team will be happy to answer your questions.*
-
-### 2. **How do I populate the `hash` field?**
-
-If your package is on [PyPI](https://pypi.org), you can get the sha256 hash from your package's page on PyPI; look for the `SHA256` link next to the download link for your package.
-
-You can also generate a hash from the command line on Linux (and Mac if you install the necessary tools below). If you go this route, the `sha256` hash is preferable to the `md5` hash.
-
-To generate the `md5` hash: `md5 your_sdist.tar.gz`
-
-To generate the `sha256` hash: `openssl sha256 your_sdist.tar.gz`
-
-You may need the openssl package, available on conda-forge:
-`conda install openssl -c conda-forge`
-
-### 3. **How do I exclude a platform?**
-
-Use the `skip` key in the `build` section along with a selector:
-
-```yaml
-build:
-    skip: true  # [win]
+```
+conda install open-dpcpp-toolkit
 ```
 
-A full description of selectors is [in the conda docs](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#preprocessing-selectors).
+or with `mamba`:
 
-If the package can otherwise be `noarch` you can also skip it by using [virtual packages](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-virtual.html).
-
-_Note_: As the package will always be built on linux, it needs to be at least available on there.
-
-
-### 4. **What does the `build: 0` entry mean?**
-
-The build number is used when the source code for the package has not changed but you need to make a new
-build. For example, if one of the dependencies of the package was not properly specified the first time
-you build a package, then when you fix the dependency and rebuild the package you should increase the build
-number.
-
-When the package version changes you should reset the build number to `0`.
-
-### 5. **Do I have to import all of my unit tests into the recipe's `test` field?**
-
-No, you do not. The main purpose of the test section is to test whether this conda package was built and installed correctly (not whether the upstream package contains bugs).
-
-### 6. **Do all of my package's dependencies have to be in conda(-forge) already?**
-
-Short answer: yes. Long answer: In principle, as long as your dependencies are in at least one of
-your user's conda channels they will be able to install your package. In practice, that is difficult
-to manage, and we strive to get all dependencies built in conda-forge.
-
-### 7. **When or why do I need to use `{{ PYTHON }} -m pip install . -vv`?**
-
-This should be the default install line for most Python packages. This is preferable to `python setup.py` because it handles metadata in a `conda`-friendlier way.
-
-### 8. **Do I need `bld.bat` and/or `build.sh`?**
-
-In many cases, no. Python packages almost never need it. If the build can be done with one line you can put it in the `script` line of the `build` section.
-
-### 9. What does being a conda-forge feedstock maintainer entail?
-
-The maintainers "job" is to:
-
-- keep the feedstock updated by merging maintenance PRs from conda-forge's bots;
-- keep the package updated by bumping the version whenever there is a new release;
-- answer questions about the package on the feedstock issue tracker.
-
-### 10. Why are there recipes already in the `recipes` directory? Should I do something about it?
-
-When a PR of recipe(s) is ready to go, it is merged into `main`. This will trigger a CI build specially designed to convert the recipe(s). However, for any number of reasons the recipe(s) may not be converted right away. In the interim, the recipe(s) will remain in `main` until they can be converted. There is no action required on the part of recipe contributors to resolve this. Also it should have no impact on any other PRs being proposed. If these recipe(s) pending conversion do cause issues for your submission, please ping `conda-forge/core` for help.
-
-### 11. **Some checks failed, but it wasn't my recipe! How do I trigger a rebuild?**
-
-Sometimes, some of the CI tools' builds fail due to no error within your recipe. If that happens, you can trigger a rebuild by re-creating the last commit and force pushing it to your branch:
-
-```bash
-# edit your last commit, giving it a new time stamp and hash
-# (you can just leave the message as it is)
-git commit --amend
-# push to github, overwriting your branch
-git push -f
+```
+mamba install open-dpcpp-toolkit
 ```
 
-If the problem was due to scripts in the `staged-recipes` repository, you may be asked to "rebase" once these are fixed. To do so, run:
-```bash
-# If you didn't add a remote for conda-forge/staged-recipes yet, also run
-# these lines:
-# git remote add upstream https://github.com/conda-forge/staged-recipes.git
-# git fetch --all
-git rebase upstream/main
-git push -f
+It is possible to list all of the versions of `open-dpcpp-toolkit` available on your platform with `conda`:
+
+```
+conda search open-dpcpp-toolkit --channel conda-forge
 ```
 
-### 12. My pull request passes all checks, but hasn't received any attention. How do I call attention to my PR?  What is the customary amount of time to wait?
+or with `mamba`:
 
-<!--
-Keep this message in sync with the PR template.
-
-https://raw.githubusercontent.com/conda-forge/staged-recipes/main/.github/pull_request_template.md
--->
-
-Thank you very much for putting in this recipe PR!
-
-This repository is very active, so if you need help with a PR, please let the
-right people know. There are language-specific teams for reviewing recipes.
-
-| Language        | Name of review team           |
-| --------------- | ----------------------------- |
-| python          | `@conda-forge/help-python`    |
-| python/c hybrid | `@conda-forge/help-python-c`  |
-| r               | `@conda-forge/help-r`         |
-| java            | `@conda-forge/help-java`      |
-| nodejs          | `@conda-forge/help-nodejs`    |
-| c/c++           | `@conda-forge/help-c-cpp`     |
-| perl            | `@conda-forge/help-perl`      |
-| Julia           | `@conda-forge/help-julia`     |
-| ruby            | `@conda-forge/help-ruby`      |
-| other           | `@conda-forge/staged-recipes` |
-
-Once the PR is ready for review, please mention one of the teams above in a
-new comment. i.e. `@conda-forge/help-some-language, ready for review!`
-Then, a bot will label the PR as 'review-requested'.
-
-Due to GitHub limitations, first time contributors to conda-forge are unable
-to ping conda-forge teams directly, but you can [ask a bot to ping the team][1]
-using a special command in a comment on the PR to get the attention of the
-`staged-recipes` team. You can also consider asking on our [Zulip chat][2]
-if your recipe isn't reviewed promptly.
-
-[1]: https://conda-forge.org/docs/maintainer/infrastructure.html#conda-forge-admin-please-ping-team
-[2]: https://conda-forge.zulipchat.com
-
-All apologies in advance if your recipe PR does not receive prompt attention.
-This is a high volume repository and the reviewers are volunteers. Review times vary depending on the number of reviewers on a given language team and may be days or weeks. We are always
-looking for more staged-recipe reviewers. If you are interested in volunteering,
-please contact a member of @conda-forge/core. We'd love to have your help!
-
-
-### 13. Is there a changelog for this repository?
-
-There's no changelog file, but the following `git` command gives a good overview of the recent changes in the repository:
-
-```bash
-$ git log --merges -- ':!recipes'
 ```
+mamba search open-dpcpp-toolkit --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search open-dpcpp-toolkit --channel conda-forge
+
+# List packages depending on `open-dpcpp-toolkit`:
+mamba repoquery whoneeds open-dpcpp-toolkit --channel conda-forge
+
+# List dependencies of `open-dpcpp-toolkit`:
+mamba repoquery depends open-dpcpp-toolkit --channel conda-forge
+```
+
+
+About conda-forge
+=================
+
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
+
+conda-forge is a community-led conda channel of installable packages.
+In order to provide high-quality builds, the process has been automated into the
+conda-forge GitHub organization. The conda-forge organization contains one repository
+for each of the installable packages. Such a repository is known as a *feedstock*.
+
+A feedstock is made up of a conda recipe (the instructions on what and how to build
+the package) and the necessary configurations for automatic building using freely
+available continuous integration services. Thanks to the awesome service provided by
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
+
+To manage the continuous integration and simplify feedstock maintenance
+[conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
+Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
+this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
+
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+
+Terminology
+===========
+
+**feedstock** - the conda recipe (raw material), supporting scripts and CI configuration.
+
+**conda-smithy** - the tool which helps orchestrate the feedstock.
+                   Its primary use is in the construction of the CI ``.yml`` files
+                   and simplify the management of *many* feedstocks.
+
+**conda-forge** - the place where the feedstock and smithy live and work to
+                  produce the finished article (built conda distributions)
+
+
+Updating open-dpcpp-toolkit-feedstock
+=====================================
+
+If you would like to improve the open-dpcpp-toolkit recipe or build a new
+package version, please fork this repository and submit a PR. Upon submission,
+your changes will be run on the appropriate platforms to give the reviewer an
+opportunity to confirm that the changes result in a successful build. Once
+merged, the recipe will be re-built and uploaded automatically to the
+`conda-forge` channel, whereupon the built conda packages will be available for
+everybody to install and use from the `conda-forge` channel.
+Note that all branches in the conda-forge/open-dpcpp-toolkit-feedstock are
+immediately built and any created packages are uploaded, so PRs should be based
+on branches in forks and branches in the main repository should only be used to
+build distinct package versions.
+
+In order to produce a uniquely identifiable distribution:
+ * If the version of a package **is not** being increased, please add or increase
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
+ * If the version of a package **is** being increased, please remember to return
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
+   back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@jackm97](https://github.com/jackm97/)
+

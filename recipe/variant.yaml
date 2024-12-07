@@ -1,0 +1,7 @@
+c_stdlib_version:  # [linux]
+  - if: linux
+    then: 2.34
+
+cuda_compiler_version_min:  # [linux or win]
+  - if: linux or win
+    then: 12
