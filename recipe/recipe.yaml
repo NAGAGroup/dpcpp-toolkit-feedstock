@@ -54,6 +54,7 @@ build:
   skip:
     - win
     - osx
+    - match(cuda_compiler_version, "<12")
   script: build.sh
 
 requirements:
@@ -65,6 +66,7 @@ requirements:
     - ${{ compiler('cuda') }}
     # this is necessary for all compiled recipes
     - ${{ stdlib('c') }}
+    - ccache
     - git
     - python >3
     - cmake 3.24
@@ -84,17 +86,18 @@ requirements:
   run:
     - gcc ${{ c_compiler_version }}
     - gxx ${{ cxx_compiler_version }}
-    - gxx_linux-64 
-    - gcc_linux-64 
+    - gxx_linux-64
+    - gcc_linux-64
   run_exports:
-    strong: 
+    strong:
       - ${{ pin_subpackage('open-dpcpp-toolkit', exact=True) }}
   run_constraints:
     - libllvm 999999999
-    - clangxx 999999999
-    - clang 999999999
-    - cuda-libraries-dev >=12.4,<13
-  
+    - libclang 999999999
+    - libclang-cpp 999999999
+    - clang-tools 999999999
+    - libllvmspirv 999999999
+    - cuda-libraries-dev >=12.6,<13
 
 about:
   summary: DPC++ toolkit with nvidia support
@@ -110,7 +113,7 @@ about:
   # (even if the license doesn't require it) using the license_file entry.
   # Please also note that some projects have multiple license files which all need to be added using a valid yaml list.
   # See https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#license-file
-  license_file: 
+  license_file:
     - LICENSE.TXT
   # The doc_url and dev_url are optional.
   # doc_url: https://simplejson.readthedocs.io/

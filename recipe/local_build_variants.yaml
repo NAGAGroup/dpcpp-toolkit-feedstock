@@ -1,0 +1,23 @@
+c_compiler:
+  - gcc
+
+c_stdlib:
+  - sysroot
+
+c_compiler_version:
+  - 12
+
+c_stdlib_version: # [linux]
+  - 2.34
+
+cxx_compiler:
+  - gxx
+
+cxx_compiler_version:
+  - 12
+
+cuda_compiler:
+  - cuda-nvcc
+
+cuda_compiler_version:
+  - 12.6
