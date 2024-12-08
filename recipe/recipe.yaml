@@ -95,8 +95,18 @@ requirements:
     - libclang-cpp 999999999
     - clang-tools 999999999
     - libllvmspirv 999999999
-    - ${{ pin_compatible('libstdcxx-devel_linux-64', exact=True) }}
-    - ${{ pin_compatible(cuda_compiler, exact=true) }}
+    - ${{ pin_compatible('libstdcxx', exact=True) }}
+    - ${{ pin_compatible('cuda-libraries', exact=true) }}
+
+tests:
+  script: test.sh
+  requirements:
+    run:
+      - cmake 3.24
+  files:
+    source:
+      - activation/
+      - llvm/
 
 about:
   summary: DPC++ toolkit with nvidia support
