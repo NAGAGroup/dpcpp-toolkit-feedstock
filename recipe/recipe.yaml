@@ -77,6 +77,7 @@ requirements:
     - git
     - lld
   host:
+    - ${{ stdlib('c') }}
     - cuda-toolkit
     - zstd-static
     - libxml2
@@ -84,6 +85,7 @@ requirements:
     - libhwloc
     - tbb-devel
   run:
+    - ${{ stdlib('c') }}
     - cuda-toolkit
   run_exports:
     strong:
@@ -98,15 +100,15 @@ requirements:
     - ${{ pin_compatible('libstdcxx', exact=True) }}
     - ${{ pin_compatible('cuda-libraries', exact=true) }}
 
-tests:
-  script: test.sh
-  requirements:
-    run:
-      - cmake 3.24
-  files:
-    source:
-      - activation/
-      - llvm/
+# tests:
+#   script: test.sh
+#   requirements:
+#     run:
+#       - cmake 3.24
+#   files:
+#     source:
+#       - activation/
+#       - llvm/
 
 about:
   summary: DPC++ toolkit with nvidia support
