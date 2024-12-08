@@ -64,8 +64,6 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
     - ${{ compiler('cuda') }}
-    # this is necessary for all compiled recipes
-    - ${{ stdlib('c') }}
     - ccache
     - git
     - python >3
@@ -78,7 +76,7 @@ requirements:
     - lld
   host:
     - ${{ stdlib('c') }}
-    - cuda-toolkit
+    - cuda-toolkit ${{ cuda_compiler_version }}
     - zstd-static
     - libxml2
     - zlib
@@ -86,19 +84,17 @@ requirements:
     - tbb-devel
   run:
     - ${{ stdlib('c') }}
-    - cuda-toolkit
+    - cuda-toolkit ${{ cuda_compiler_version }}
   run_exports:
     strong:
       - ${{ pin_subpackage('open-dpcpp-toolkit', exact=True) }}
-      - ${{ pin_compatible('cuda-libraries', exact=True) }}
+      - ${{ pin_compatible('cuda-libraries') }}
   run_constraints:
     - libllvm 999999999
     - libclang 999999999
     - libclang-cpp 999999999
     - clang-tools 999999999
     - libllvmspirv 999999999
-    - ${{ pin_compatible('libstdcxx', exact=True) }}
-    - ${{ pin_compatible('cuda-libraries', exact=true) }}
 
 # tests:
 #   script: test.sh
