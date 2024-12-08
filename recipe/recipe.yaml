@@ -76,13 +76,13 @@ requirements:
     - wget
     - git
     - lld
+  host:
+    - cuda-toolkit
     - zstd-static
     - libxml2
     - zlib
     - libhwloc
     - tbb-devel
-  host:
-    - cuda-toolkit
   run:
     - cuda-toolkit
   run_exports:
