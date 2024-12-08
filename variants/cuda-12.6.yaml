@@ -5,7 +5,7 @@ c_stdlib:
   - sysroot
 
 c_compiler_version:
-  - 12
+  - 13
 
 c_stdlib_version: # [linux]
   - 2.34
