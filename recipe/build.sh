@@ -23,8 +23,6 @@ cp "${LLVM_SYCL_SOURCE_DIR}/LICENSE.TXT" "${SRC_DIR}/LICENSE.TXT"
 bash "${SUBPROJECT_ROOT}/scripts/configure.sh"
 bash "${SUBPROJECT_ROOT}/scripts/install.sh"
 
-rm "${PREFIX}/conda-activate.sh"
-
 # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # This will allow them to be run on environment activation.
 CHANGE="~activate-dpcpp-clang"

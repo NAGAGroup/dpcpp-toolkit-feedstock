@@ -82,22 +82,21 @@ requirements:
     - libhwloc
     - tbb-devel
   host:
-    - cuda-toolkit ${{ cuda_compiler_version }}
+    - cuda-toolkit
   run:
-    - gcc ${{ c_compiler_version }}
-    - gxx ${{ cxx_compiler_version }}
-    - gxx_linux-64
-    - gcc_linux-64
+    - cuda-toolkit
   run_exports:
     strong:
       - ${{ pin_subpackage('open-dpcpp-toolkit', exact=True) }}
+      - ${{ pin_compatible('cuda-libraries', exact=True) }}
   run_constraints:
     - libllvm 999999999
     - libclang 999999999
     - libclang-cpp 999999999
     - clang-tools 999999999
     - libllvmspirv 999999999
-    - cuda-libraries-dev >=12.6,<13
+    - ${{ pin_compatible('libstdcxx-devel_linux-64', exact=True) }}
+    - ${{ pin_compatible(cuda_compiler, exact=true) }}
 
 about:
   summary: DPC++ toolkit with nvidia support
