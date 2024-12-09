@@ -9,5 +9,4 @@ export LLVM_SYCL_BUILD_DIR="${LLVM_SYCL_SOURCE_DIR}/build"
 
 export LINUX_BUILD_ENV_ACTIVE=0
 export DPCPP_BUILD_ENV_ACTIVE=0
-source "${SRC_DIR}/activation/linux.sh"
 source "${SRC_DIR}/activation/llvm.sh"
