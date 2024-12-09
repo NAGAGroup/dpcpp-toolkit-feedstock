@@ -64,6 +64,7 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
     - ${{ compiler('cuda') }}
+    - ${{ stdlib('c') }}
     - ccache
     - git
     - python >3
