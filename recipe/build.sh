@@ -10,10 +10,5 @@ cp "${LLVM_SYCL_SOURCE_DIR}/LICENSE.TXT" "${SRC_DIR}/LICENSE.TXT"
 bash "${SUBPROJECT_ROOT}/scripts/configure.sh"
 bash "${SUBPROJECT_ROOT}/scripts/install.sh"
 
-# Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
-# This will allow them to be run on environment activation.
-CHANGE="activate"
-for CHANGE in "activate" "deactivate"; do
-  mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
-  cp "${RECIPE_DIR}/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/~open-dpcpp-toolkit-${CHANGE}.sh"
-done
+cp "${SRC_DIR}/install/libexec"/* "${PREFIX}/libexec"
+cp "${SRC_DIR}/install/share"/* "${PREFIX}/share"

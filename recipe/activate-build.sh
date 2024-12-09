@@ -1,4 +1,4 @@
-export INSTALL_PREFIX="${PREFIX}"
+export INSTALL_PREFIX="/tmp/dpcpp-toolkit-install"
 export PROJECT_ROOT="${SRC_DIR}"
 export SUBPROJECT_ROOT="${SRC_DIR}/llvm"
 export INSTALL_RPATHS='$ORIGIN;$ORIGIN/../lib;$ORIGIN/../lib64'
