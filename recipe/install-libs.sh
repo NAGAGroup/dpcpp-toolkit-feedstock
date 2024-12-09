@@ -2,5 +2,6 @@
 set -exuo pipefail
 
 source "${RECIPE_DIR}/activate-build.sh"
+bash "${RECIPE_DIR}/build.sh"
 
-cp "${SRC_DIR}/install/lib"/* "${PREFIX}/lib"
+cp -r "${INSTALL_PREFIX}/lib"/* "${PREFIX}/lib"

@@ -7,59 +7,19 @@ recipe:
   version: ${{ version }}
 
 source:
-  # If getting the source from GitHub, remove the line above,
-  # uncomment the line below, and modify as needed. Use releases if available:
-  # url: https://github.com/simplejson/simplejson/releases/download/{{ version }}/simplejson-{{ version }}.tar.gz
-  # and otherwise fall back to archive:
-  # url: https://github.com/simplejson/simplejson/archive/v{{ version }}.tar.gz
-  # sha256 is the preferred checksum -- you can get it for a file with:
-  #  `openssl sha256 <file name>`.
-  # You may need the openssl package, available on conda-forge:
-  #  `conda install openssl -c conda-forge``
   git: https://github.com/NAGAGroup/CodeAccelerate-SYCLBuildKit.git
   branch: main
 
 outputs:
   - package:
-      name: open-dpcpp-libs-devel
+      name: open-dpcpp-libs
     build:
       number: 0
       skip:
         - win
         - osx
         - match(cuda_compiler_version, "<12")
-      script: install-libs-devel.sh
-    requirements:
-      run:
-        - open-dpcpp-libs ${{ version }}
-
-  - package:
-      name: open-dpcpp-compiler
-    build:
-      number: 0
-      skip:
-        - win
-        - osx
-        - match(cuda_compiler_version, "<12")
-      script: install-dpcpp.sh
-    requirements:
-      run:
-        - cuda-toolkit ${{ cuda_compiler_version }}
-        - open-dpcpp-libs ${{ version }}
-        - open-dpcpp-libs-devel ${{ version }}
-      run_exports:
-        strong:
-          - ${{ pin_subpackage('open-dpcpp-libs', exact=True) }}
-
-  - package:
-      name: open-dpcpp-toolkit
-    build:
-      number: 0
-      skip:
-        - win
-        - osx
-        - match(cuda_compiler_version, "<12")
-      script: build.sh
+      script: install-libs.sh
     requirements:
       build:
         # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.
@@ -86,38 +46,93 @@ outputs:
         - libhwloc
         - tbb-devel
       run:
-        - open-dpcpp-libs ${{ version }}
-        - open-dpcpp-libs-devel ${{ version }}
-        - open-dpcpp-compiler ${{ version }}
-      run_exports:
-        strong:
-          - ${{ pin_subpackage('open-dpcpp-libs') }}
-
-  - package:
-      name: open-dpcpp-libs
-    build:
-      number: 0
-      skip:
-        - win
-        - osx
-        - match(cuda_compiler_version, "<12")
-      script: install-libs.sh
-    requirements:
-      run:
-        - libxml2
-        - zlib
-        - libhwloc
-        - tbb-devel
         - cuda-libraries ${{ cuda_compiler_version }}
       run_exports:
         - open-dpcpp-libs ${{ version }}
-        - ${{ pin_compatible('cuda-libraries') }}
       run_constraints:
         - libllvm 999999999
         - libclang 999999999
         - libclang-cpp 999999999
         - clang-tools 999999999
         - libllvmspirv 999999999
+
+  - package:
+      name: open-dpcpp-libs-devel
+    build:
+      number: 0
+      skip:
+        - win
+        - osx
+        - match(cuda_compiler_version, "<12")
+      script: install-libs-devel.sh
+    requirements:
+      build:
+        # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.
+        # Compilers are named 'c', 'cxx', 'fortran', among others
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('cuda') }}
+        - ${{ stdlib('c') }}
+        - ccache
+        - git
+        - python >3
+        - cmake 3.24
+        - pkg-config
+        - pkgconfig
+        - ninja
+        - wget
+        - git
+        - lld
+      host:
+        - cuda-toolkit ${{ cuda_compiler_version }}
+        - zstd-static
+        - libxml2
+        - zlib
+        - libhwloc
+        - tbb-devel
+      run:
+        - ${{ pin_subpackage('open-dpcpp-libs', exact=True) }}
+
+  - package:
+      name: open-dpcpp-toolkit
+    build:
+      number: 0
+      skip:
+        - win
+        - osx
+        - match(cuda_compiler_version, "<12")
+      script: install-dpcpp.sh
+    requirements:
+      build:
+        # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.
+        # Compilers are named 'c', 'cxx', 'fortran', among others
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('cuda') }}
+        - ${{ stdlib('c') }}
+        - ccache
+        - git
+        - python >3
+        - cmake 3.24
+        - pkg-config
+        - pkgconfig
+        - ninja
+        - wget
+        - git
+        - lld
+      host:
+        - cuda-toolkit ${{ cuda_compiler_version }}
+        - zstd-static
+        - libxml2
+        - zlib
+        - libhwloc
+        - tbb-devel
+      run:
+        - cuda-toolkit ${{ cuda_compiler_version }}
+        - ${{ pin_subpackage('open-dpcpp-libs-devel', exact=True) }}
+      run_exports:
+        strong:
+          - ${{ pin_subpackage('open-dpcpp-libs', exact=True) }}
 
 # tests:
 #   script: test.sh

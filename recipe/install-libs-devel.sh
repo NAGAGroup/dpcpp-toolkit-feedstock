@@ -2,5 +2,6 @@
 set -exuo pipefail
 
 source "${RECIPE_DIR}/activate-build.sh"
+bash "${RECIPE_DIR}/build.sh"
 
-cp "${SRC_DIR}/install/include"/* "${PREFIX}/include"
+cp -r "${INSTALL_PREFIX}/include"/* "${PREFIX}/include"
