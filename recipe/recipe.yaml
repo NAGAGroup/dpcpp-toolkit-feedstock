@@ -76,7 +76,6 @@ requirements:
     - git
     - lld
   host:
-    - ${{ stdlib('c') }}
     - cuda-toolkit ${{ cuda_compiler_version }}
     - zstd-static
     - libxml2
@@ -84,7 +83,6 @@ requirements:
     - libhwloc
     - tbb-devel
   run:
-    - ${{ stdlib('c') }}
     - cuda-toolkit ${{ cuda_compiler_version }}
   run_exports:
     strong:
