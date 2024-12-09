@@ -91,6 +91,7 @@ outputs:
         - libhwloc
         - tbb-devel
       run:
+        - cuda-libraries-dev ${{ cuda_compiler_version }}
         - ${{ pin_subpackage('open-dpcpp-libs', exact=True) }}
 
   - package:

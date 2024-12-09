@@ -24,3 +24,5 @@
 *.pyc
 output
 !variants/**
+build
+install
