@@ -13,14 +13,22 @@ if [ "${CONDA_BUILD:-0}" == "1" ]; then
 
   sed -i "s|@BUILD_PREFIX@|$BUILD_PREFIX|g" "${BUILD_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang.cfg"
   sed -i "s|@BUILD_PREFIX@|$BUILD_PREFIX|g" "${BUILD_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang++.cfg"
+
   sed -i "s|@PREFIX@|$PREFIX|g" "${BUILD_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang.cfg"
   sed -i "s|@PREFIX@|$PREFIX|g" "${BUILD_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang++.cfg"
+
+  sed -i "s|@SYSROOT@|$CONDA_BUILD_SYSROOT|g" "${BUILD_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang.cfg"
+  sed -i "s|@SYSROOT@|$CONDA_BUILD_SYSROOT|g" "${BUILD_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang++.cfg"
 else
   export CC="${CONDA_PREFIX}/bin/clang"
   export CXX="${CONDA_PREFIX}/bin/clang++"
 
   sed -i "s|@BUILD_PREFIX@|$CONDA_PREFIX|g" "${CONDA_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang.cfg"
   sed -i "s|@BUILD_PREFIX@|$CONDA_PREFIX|g" "${CONDA_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang++.cfg"
+
   sed -i "s|@PREFIX@|$CONDA_PREFIX|g" "${CONDA_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang.cfg"
   sed -i "s|@PREFIX@|$CONDA_PREFIX|g" "${CONDA_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang++.cfg"
+
+  sed -i "s|@SYSROOT@|$CONDA_BUILD_SYSROOT|g" "${CONDA_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang.cfg"
+  sed -i "s|@SYSROOT@|$CONDA_BUILD_SYSROOT|g" "${CONDA_PREFIX}/bin/${CONDA_TOOLCHAIN_HOST}-clang++.cfg"
 fi
